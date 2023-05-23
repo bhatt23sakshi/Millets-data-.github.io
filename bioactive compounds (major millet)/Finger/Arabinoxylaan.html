@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arabinoxylan</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+<style type="text/css">
+
+  /* ============ desktop view ============ */
+  @media all and (min-width: 992px) {
+  
+    .dropdown-menu li{
+      position: relative;
+    }
+    .dropdown-menu .submenu{ 
+      display: none;
+      position: absolute;
+      left:100%; top:-7px;
+    }
+    .dropdown-menu .submenu-left{ 
+      right:100%; left:auto;
+    }
+  
+    .dropdown-menu > li:hover{ background-color: #f1f1f1 }
+    .dropdown-menu > li:hover > .submenu{
+      display: block;
+    }
+  }	
+  /* ============ desktop view .end// ============ */
+  
+  /* ============ small devices ============ */
+  @media (max-width: 991px) {
+  
+  .dropdown-menu .dropdown-menu{
+      margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+  }
+  
+  }	
+  /* ============ small devices .end// ============ */
+  
+  .masthead{
+      background-size: cover;
+      min-height: 100vh;
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0,0,0,.2);
+    opacity: 80%;
+  }
+  </style>
+  
+  
+  <script type="text/javascript">
+  //	window.addEventListener("resize", function() {
+  //		"use strict"; window.location.reload(); 
+  //	});
+  
+  
+    document.addEventListener("DOMContentLoaded", function(){
+          
+  
+        /////// Prevent closing from click inside dropdown
+      document.querySelectorAll('.dropdown-menu').forEach(function(element){
+        element.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+      })
+  
+  
+  
+      // make it as accordion for smaller screens
+      if (window.innerWidth < 992) {
+  
+        // close all inner dropdowns when parent is closed
+        document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+          everydropdown.addEventListener('hidden.bs.dropdown', function () {
+            // after dropdown is hidden, then find all submenus
+              this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+                // hide every submenu as well
+                everysubmenu.style.display = 'none';
+              });
+          })
+        });
+        
+        document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+          element.addEventListener('click', function (e) {
+      
+              let nextEl = this.nextElementSibling;
+              if(nextEl && nextEl.classList.contains('submenu')) {	
+                // prevent opening link if link needs to open dropdown
+                e.preventDefault();
+                console.log(nextEl);
+                if(nextEl.style.display == 'block'){
+                  nextEl.style.display = 'none';
+                } else {
+                  nextEl.style.display = 'block';
+                }
+  
+              }
+          });
+        })
+      }
+      // end if innerWidth
+  
+    }); 
+    // DOMContentLoaded  end
+  </script>
+    <title>History </title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+       <a class="navbar-brand" href="/index.html">Home</a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+     <div class="collapse navbar-collapse" id="main_nav">
+     
+   
+     <ul class="navbar-nav">
+       
+       <li class="nav-item"><a class="nav-link" href="/About.html"> About </a></li>
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Millet  </a>
+           <ul class="dropdown-menu">
+           <li><a class="dropdown-item" href="/millets/history.html"> History </a></li>
+           
+          
+           <li><a class="dropdown-item" href="/millets/Taxonomy.html"> Taxonomy </a></li>
+           <li><a class="dropdown-item" href="/millets/types of millet.html"> Types </a>
+           <li><a class="dropdown-item" href="/millets/Nutrition.html"> Nutrition </a>
+           <li><a class="dropdown-item" href="/millets/Cultivation.html"> Cultivation </a>
+           <li><a class="dropdown-item" href="/millets/production.html"> Production </a>
+           </ul>
+       </li>
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Major Millet  </a>
+           <ul class="dropdown-menu">
+   
+           <li><a class="dropdown-item" href="#"> Finger Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Finger/history finger millet.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Finger/taxonomy finger millet.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Finger/varieties finger millet.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/nutrition finger millet.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/cultivation finger millet.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/production finger millet.html"> Production </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/antioxidant finger millet.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Foxtail Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Foxtail/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Foxtail/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Foxtail/varieties.html"> varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/production.html"> Production </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/antioxidant.html"> Antioxidant </a>
+   
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Pearl Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Pearl/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Pearl/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Pearl/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/antioxidant.html"> Antioxidant </a>
+           </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Proso Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Praso/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Praso/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Praso/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Praso/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Praso/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Praso/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/majorMillets/Praso/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+   
+           
+           </ul>
+       </li>
+   
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Minor Millet  </a>
+           <ul class="dropdown-menu">
+   
+           <li><a class="dropdown-item" href="#"> Kodo Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Kudo/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="../minorMillets/Kudo/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="../minorMillets/Kudo/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="../minorMillets/Kudo/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="../minorMillets/Kudo/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="../minorMillets/Kudo/production.html"> Production </a>
+               <li><a class="dropdown-item" href="../minorMillets/Kudo/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Little Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Little/histroy.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Little/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Little/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Little/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Little/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Little/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Little/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Fonio Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/histroy.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Fonio/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Fonio/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Fonio/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/antioxidants.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Barnyard Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Barnyard/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Barnyard/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Barnyard/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Teff Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Teff/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Teff/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Teff/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Teff/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Teff/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Teff/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Teff/antioxidant .html"> Antioxidant </a>	
+            </ul>
+           </li>
+   
+           
+           </ul>
+       </li>
+   
+   
+   
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Bioactive Compounds (Major Millet)  </a>
+          <ul class="dropdown-menu">
+  
+          <li><a class="dropdown-item" href="#"> Finger Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/Dietary fibre component..html"> Dietary fibre </a></li>
+              <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/Arabinoxylaan.html"> Arabinoxylan </a></li>
+              
+            
+                <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/Polyphenols.html"> Polyphenols   </a>
+            
+           </ul>
+          </li>
+  
+          <li><a class="dropdown-item" href="#"> Foxtail Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/polyphenols.html"> Polyphenols </a></li>
+              <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/bioactive peptides.html"> Bioactive peptide  </a></li>
+              <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/carotenoids.html"> Carotenoids   </a>
+            <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/tocols.html"> Tocols  </a>
+              <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/dietary fibre.html"> Dietary fibre  </a>
+            
+           </ul>
+          </li>
+  
+          <li><a class="dropdown-item" href="#"> Pearl Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/Polyphenol.html"> Polyphenols </a></li>
+            <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/dietary fibre.html">Dietary fibres </a></li>
+               
+            
+           </ul>
+          </li>
+          <li><a class="dropdown-item" href="#"> Proso Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/Polyphenols.html"> Polyphenols </a></li>
+             
+            <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/carotenoids.html"> Carotenoids </a> </li>
+            <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/dietary fibre.html"> Dietary fibre </a> </li>
+            
+           </ul>
+          </li>
+        
+         
+  
+          
+          </ul>
+      </li>
+  
+  
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Bioactive Compounds (Minor Millet)  </a>
+          <ul class="dropdown-menu">
+  
+          <li><a class="dropdown-item" href="#"> Kodo Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/Polyphenols.html"> Polyphenol</a></li>
+            <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/Polyphenols.html"> Dietary fibre </a></li>
+             
+            
+           </ul>
+          </li>
+  
+          <li><a class="dropdown-item" href="#"> Little Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/Phytochemicals.html"> Polyphenols </a></li>
+            <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/dietary fibre.html"> Dietary fibre </a></li>
+             
+           </ul>
+          </li>
+  
+          <li><a class="dropdown-item" href="#"> Fonio Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/dietary fibre.html"> Dietary fibre </a></li>
+              <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/polyphenols.html"> Polyphenol</a></li>
+                
+                   <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/saponins.html"> Saponins  </a> </li>
+                
+           </ul>
+          </li>
+          <li><a class="dropdown-item" href="#"> Barnyard Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Barnyard/polyphenols.html"> Polyphenols   </a></li>
+            <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Barnyard/dietary fibre.html"> Dietary fibre </a></li>
+             
+           </ul>
+          </li>
+  
+          <li><a class="dropdown-item" href="#"> Teff Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Teff/dietary fibre.html"> Dietary fibre </a></li>
+              
+              <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Teff/phytochemicals.html"> Polyphenols</a>
+            
+           </ul>
+          </li>
+        
+         
+  
+          
+          </ul>
+      </li>
+  
+      <li class="nav-item"><a class="nav-link" href="/team.html"> Team </a></li>
+  
+    </ul>
+   
+     
+   
+     </div> <!-- navbar-collapse.// -->
+    </div> <!-- container-fluid.// -->
+   </nav>
+<body>
+    <body style="background-color:antiquewhite;"></body> 
+<body>
+<body>
+    
+    <style>
+        p{font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: medium;
+        font-style: normal;}
+        </style>
+        <h2>Arabinoxylan </h2>
+        <hr>
+        <p>Arabinoxylan is the primary non-starch polysaccharide present in the cell walls of cereal grains, with rye grains being the richest source followed by wheat and barley grains. Finger millet also contains arabinoxylans, which exist in both water-extractable and water-unextractable forms with a molecular weight of about 139.9-140 kDa. Finger millet arabinoxylans are highly branched and complex in structure, containing terminally linked arabinose, uronic and ferulic acids, galactose, and small amounts of xylose.
+
+            The structure of finger millet arabinoxylans is similar to other cereal arabinoxylans, with a linear backbone of β-d-xylopyranosyl residues linked through a (1→4) glycosidic bond and attached residues of α-l-arabinopyranosyl at carbon position 3 or 2, or both. The polysaccharide is highly branched, with most arabinose and xylose residue substitutions at carbon position 3. Finger millet arabinoxylans also contain up to 10% of uronic acid in the form of glucuronic acid, which is linked to the xylose residues at C-2.
+            
+            Finger millet arabinoxylans have been shown to have high antioxidant activity due to the presence of bound phenolic acids, particularly ferulic acid, which can form cross-linkages by oxidation to adjacent arabinoxylan chains. These cross-linkages result in the formation of ferulate dimers or rarely triferulate residues, collectively known as feraxans, which possess high antioxidant properties. The presence of a high amount of uronic acid and molecular weight also contributes to their antioxidant activity. However, there is still limited research on the structural characteristics and associated activity of finger millet arabinoxylans.
+            
+            </p>
+            
+            
+            
+            
+                <p><img src="https://d3i71xaburhd42.cloudfront.net/33391beb25528685c313bd3a8f35256fab736b8a/3-Figure1-1.png" jsaction="load:XAeZkd;" jsname="HiaYvf" class="n3VNCb KAlRDb" alt="PDF] Finger millet bioactive compounds, bioaccessibility, and potential  health effects – a review | Semantic Scholar" data-noaft="1" style="width: 432px; height: 189.333px; margin: 202.033px 0px;"></p>
+                <h2>Uses/ Applications </h2>
+                <p>
+                    <ul>
+                        <li> <strong>Diabetes. </strong> </li>
+                            <p>Early research shows that eating food fortified with arabinoxylan for 5 weeks lowers blood sugar levels and insulin levels in people with type 2 diabetes. It also seems to improve blood sugar control. </p>
+                        <li> <strong>Prediabetes</strong></li>
+                        <p>Early research shows that eating food fortified with arabinoxylan for 6 weeks lowers blood sugar levels and levels of a bloodfat called triglycerides.</p>
+                        <li>A grouping of symptoms that increase the risk of diabetes, heart disease, and stroke (metabolic syndrome). Early research shows that eating a diet containing arabinoxylan does not seem to improve blood sugar or cholesterol levels in most people with metabolic syndrome.</li>
+                      <li>Heart disease.</li>
+                      <li>Constipation.</li>
+                      <li>Weight loss. </li>
+                       <li> Other conditions.</li>
+                    </ul>
+                </p>
+        <h2>Reference </h2>
+        <hr>
+        <p>
+            <ul>
+                <li> [1] Bartlomiej S., Justyna R., Ewa N. (2011) <a href="https://www.researchgate.net/publication/232247091_Bioactive_compounds_in_cereal_grains_-_occurrence_structure_technological_significance_nutritional_benefits_-_a_review"class="button">  Bioactive compounds in cereal grains – occurrence, structure, technological significance and nutritional benefits – a review. 
+                  </a>  Food Science and Technology International, 18: 559–568.  </li>
+               <li> [2]R Shyama Prasad Rao , G Muralikrishna (2006) <a href="https://pubmed.ncbi.nlm.nih.gov/16289622/"class="button"> Water soluble feruloyl 
+                arabinoxylans from rice and ragi: changes upon malting 
+                and their consequence on antioxidant activity. </a> Phytochemistry, 67: 91–99.   </li>
+               <li> [3] Rao R.S.P., Muralikrishna G. (2007)  <a href="https://agris.fao.org/agris-search/search.do?recordID=US201300780507"class="button">  Structural characteristics of water-soluble feruloyl arabinoxylans from rice 
+                (Oryza sativa) and ragi (finger millet, Eleusine coracana): 
+                variations upon malting.</a> Food Chemistry, 104: 1160–1170  </li>
+                <li>[4] Subba Rao M.V.S.S.T.S., Muralikrishna G. (2004)  <a href="https://pubmed.ncbi.nlm.nih.gov/15388362/"class="button">  Structural 
+                    analysis of arabinoxylans isolated from native and malted 
+                    finger millet (Eleusine coracana, ragi).</a> Carbohydrate 
+                    Research, 339: 2457–2463.  </li>
+               <li>[5] Izydorczyk M.S., Dexter J.E. (2008) <a href="https://www.sciencedirect.com/science/article/abs/pii/S0963996908000707"class="button"> Barley β-glucans and 
+                arabinoxylans: Molecular structure, physicochemical 
+                properties and uses in food products – a review.</a> Food 
+                Research International, 41: 850–868  </li>
+                <li> [6] Lafiandra D., Riccardi G., Shewry P.R. (2014) <a href="https://pubmed.ncbi.nlm.nih.gov/24966450/"class="button">  Review – Improving cereal grain carbohydrates for diet and health. 
+                    Journal of Cereal Science, 59: 312–326. </a> </li>
+                    <li>[7] Rao R.S.P., Muralikrishna G. (2006)<a href="https://pubmed.ncbi.nlm.nih.gov/16289622/"class="button">  Water soluble feruloyl 
+                        arabinoxylans from rice and ragi: changes upon malting 
+                        and their consequence on antioxidant activity.</a> Phytochemistry, 67: 91–99   </li>
+                        <li>[8] Subba Rao M.V.S.S.T.S., Muralikrishna G. (2004) <a href="https://pubmed.ncbi.nlm.nih.gov/15388362/"class="button">  Structural 
+                            analysis of arabinoxylans isolated from native and malted 
+                            finger millet (Eleusine coracana, ragi)</a>. Carbohydrate 
+                            Research, 339: 2457–2463.   </li>
+                            <li> [9] Chandrasekara A., Shahidi F. (2011) <a href="https://www.sciencedirect.com/science/article/pii/S175646461100034X"class="button"> Antiproliferative potential and DNA scission inhibitory activity of phenolics 
+                                from whole millet grains</a>. Journal of Functional Foods, 
+                                3: 159–170.  </li>
+               
+              
+               
+              
+               
+               
+               <li>[10] <a href="https://www.webmd.com/vitamins/ai/ingredientmono-1455/arabinoxylan"class="button">ARABINOXYLAN - Uses, Side Effects, and More </a> </li>
+               <li> [11] <a href="https://www.agriculturejournals.cz/publicFiles/206_2016-CJFS.pdf"class="button">Finger Millet Bioactive Compounds, Bioaccessibility, 
+                and Potential Health Effects – a Review </a> 
+                </li>
+            </ul>
+        </p>
+    </p>   
+   
+</body>
+</html>

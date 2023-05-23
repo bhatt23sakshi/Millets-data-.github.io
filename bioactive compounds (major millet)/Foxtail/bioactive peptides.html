@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+<style type="text/css">
+
+  /* ============ desktop view ============ */
+  @media all and (min-width: 992px) {
+  
+    .dropdown-menu li{
+      position: relative;
+    }
+    .dropdown-menu .submenu{ 
+      display: none;
+      position: absolute;
+      left:100%; top:-7px;
+    }
+    .dropdown-menu .submenu-left{ 
+      right:100%; left:auto;
+    }
+  
+    .dropdown-menu > li:hover{ background-color: #f1f1f1 }
+    .dropdown-menu > li:hover > .submenu{
+      display: block;
+    }
+  }	
+  /* ============ desktop view .end// ============ */
+  
+  /* ============ small devices ============ */
+  @media (max-width: 991px) {
+  
+  .dropdown-menu .dropdown-menu{
+      margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+  }
+  
+  }	
+  /* ============ small devices .end// ============ */
+  
+  .masthead{
+      background-size: cover;
+      min-height: 100vh;
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0,0,0,.2);
+    opacity: 80%;
+  }
+  </style>
+  
+  
+  <script type="text/javascript">
+  //	window.addEventListener("resize", function() {
+  //		"use strict"; window.location.reload(); 
+  //	});
+  
+  
+    document.addEventListener("DOMContentLoaded", function(){
+          
+  
+        /////// Prevent closing from click inside dropdown
+      document.querySelectorAll('.dropdown-menu').forEach(function(element){
+        element.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+      })
+  
+  
+  
+      // make it as accordion for smaller screens
+      if (window.innerWidth < 992) {
+  
+        // close all inner dropdowns when parent is closed
+        document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+          everydropdown.addEventListener('hidden.bs.dropdown', function () {
+            // after dropdown is hidden, then find all submenus
+              this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+                // hide every submenu as well
+                everysubmenu.style.display = 'none';
+              });
+          })
+        });
+        
+        document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+          element.addEventListener('click', function (e) {
+      
+              let nextEl = this.nextElementSibling;
+              if(nextEl && nextEl.classList.contains('submenu')) {	
+                // prevent opening link if link needs to open dropdown
+                e.preventDefault();
+                console.log(nextEl);
+                if(nextEl.style.display == 'block'){
+                  nextEl.style.display = 'none';
+                } else {
+                  nextEl.style.display = 'block';
+                }
+  
+              }
+          });
+        })
+      }
+      // end if innerWidth
+  
+    }); 
+    // DOMContentLoaded  end
+  </script>
+    <title>History </title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+       <a class="navbar-brand" href="/index.html">Home</a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+     <div class="collapse navbar-collapse" id="main_nav">
+     
+   
+     <ul class="navbar-nav">
+       
+       <li class="nav-item"><a class="nav-link" href="/About.html"> About </a></li>
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Millet  </a>
+           <ul class="dropdown-menu">
+           <li><a class="dropdown-item" href="/millets/history.html"> History </a></li>
+           
+          
+           <li><a class="dropdown-item" href="/millets/Taxonomy.html"> Taxonomy </a></li>
+           <li><a class="dropdown-item" href="/millets/types of millet.html"> Types </a>
+           <li><a class="dropdown-item" href="/millets/Nutrition.html"> Nutrition </a>
+           <li><a class="dropdown-item" href="/millets/Cultivation.html"> Cultivation </a>
+           <li><a class="dropdown-item" href="/millets/production.html"> Production </a>
+           </ul>
+       </li>
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Major Millet  </a>
+           <ul class="dropdown-menu">
+   
+           <li><a class="dropdown-item" href="#"> Finger Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Finger/history finger millet.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Finger/taxonomy finger millet.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Finger/varieties finger millet.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/nutrition finger millet.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/cultivation finger millet.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/production finger millet.html"> Production </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/antioxidant finger millet.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Foxtail Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Foxtail/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Foxtail/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Foxtail/varieties.html"> varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/production.html"> Production </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/antioxidant.html"> Antioxidant </a>
+   
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Pearl Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Pearl/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Pearl/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Pearl/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/antioxidant.html"> Antioxidant </a>
+           </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Proso Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Praso/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Praso/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Praso/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Praso/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Praso/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Praso/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/majorMillets/Praso/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+   
+           
+           </ul>
+       </li>
+   
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Minor Millet  </a>
+           <ul class="dropdown-menu">
+   
+           <li><a class="dropdown-item" href="#"> Kodo Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Kudo/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="../minorMillets/Kudo/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="../minorMillets/Kudo/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="../minorMillets/Kudo/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="../minorMillets/Kudo/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="../minorMillets/Kudo/production.html"> Production </a>
+               <li><a class="dropdown-item" href="../minorMillets/Kudo/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Little Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Little/histroy.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Little/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Little/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Little/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Little/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Little/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Little/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Fonio Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/histroy.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Fonio/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Fonio/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Fonio/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/antioxidants.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Barnyard Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Barnyard/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Barnyard/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Barnyard/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Teff Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Teff/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Teff/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Teff/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Teff/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Teff/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Teff/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Teff/antioxidant .html"> Antioxidant </a>	
+            </ul>
+           </li>
+   
+           
+           </ul>
+       </li>
+   
+   
+   
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Bioactive Compounds (Major Millet)  </a>
+          <ul class="dropdown-menu">
+  
+          <li><a class="dropdown-item" href="#"> Finger Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/Dietary fibre component..html"> Dietary fibre </a></li>
+              <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/Arabinoxylaan.html"> Arabinoxylan </a></li>
+              
+            
+                <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/Polyphenols.html"> Polyphenols   </a>
+            
+           </ul>
+          </li>
+  
+          <li><a class="dropdown-item" href="#"> Foxtail Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/polyphenols.html"> Polyphenols </a></li>
+              <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/bioactive peptides.html"> Bioactive peptide  </a></li>
+              <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/carotenoids.html"> Carotenoids   </a>
+            <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/tocols.html"> Tocols  </a>
+              <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/dietary fibre.html"> Dietary fibre  </a>
+            
+           </ul>
+          </li>
+  
+          <li><a class="dropdown-item" href="#"> Pearl Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/Polyphenol.html"> Polyphenols </a></li>
+            <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/dietary fibre.html">Dietary fibres </a></li>
+               
+            
+           </ul>
+          </li>
+          <li><a class="dropdown-item" href="#"> Proso Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/Polyphenols.html"> Polyphenols </a></li>
+             
+            <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/carotenoids.html"> Carotenoids </a> </li>
+            <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/dietary fibre.html"> Dietary fibre </a> </li>
+            
+           </ul>
+          </li>
+        
+         
+  
+          
+          </ul>
+      </li>
+  
+  
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Bioactive Compounds (Minor Millet)  </a>
+          <ul class="dropdown-menu">
+  
+          <li><a class="dropdown-item" href="#"> Kodo Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/Polyphenols.html"> Polyphenol</a></li>
+            <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/Polyphenols.html"> Dietary fibre </a></li>
+             
+            
+           </ul>
+          </li>
+  
+          <li><a class="dropdown-item" href="#"> Little Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/Phytochemicals.html"> Polyphenols </a></li>
+            <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/dietary fibre.html"> Dietary fibre </a></li>
+             
+           </ul>
+          </li>
+  
+          <li><a class="dropdown-item" href="#"> Fonio Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/dietary fibre.html"> Dietary fibre </a></li>
+              <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/polyphenols.html"> Polyphenol</a></li>
+                
+                   <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/saponins.html"> Saponins  </a> </li>
+                
+           </ul>
+          </li>
+          <li><a class="dropdown-item" href="#"> Barnyard Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Barnyard/polyphenols.html"> Polyphenols   </a></li>
+            <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Barnyard/dietary fibre.html"> Dietary fibre </a></li>
+             
+           </ul>
+          </li>
+  
+          <li><a class="dropdown-item" href="#"> Teff Millet &raquo; </a>
+             <ul class="submenu dropdown-menu">
+  
+  
+              <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Teff/dietary fibre.html"> Dietary fibre </a></li>
+              
+              <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Teff/phytochemicals.html"> Polyphenols</a>
+            
+           </ul>
+          </li>
+        
+         
+  
+          
+          </ul>
+      </li>
+  
+      <li class="nav-item"><a class="nav-link" href="/team.html"> Team </a></li>
+  
+    </ul>
+   
+     
+   
+     </div> <!-- navbar-collapse.// -->
+    </div> <!-- container-fluid.// -->
+   </nav>
+<body>
+    <body style="background-color:antiquewhite;"></body> 
+<body>
+<body>
+    
+    <style>
+        p{font-family:sans-serif;
+        font-size: medium;
+        font-style: normal;}
+
+        </style>
+        <h1>Bioactive peptides </h1>
+    
+    <p>Bioactive Peptides (BP) are specific protein fragments that have a positive impact on body functions or conditions and may influence health. These organic substances are formed by amino acids joined by covalent bonds, also known as amide or peptide bonds. BP and proteins play important roles in the metabolic functions of living organisms and, consequently, in human health. They display hormone or drug-like activities and can be classified based on their mode of action as antimicrobial, anti-thrombotic, antihypertensive, opioid, immunomodulatory, mineral binding, and antioxidative.
+
+        The activity of the peptides is determined by the amino acid composition and sequence once they are released from the precursor protein where they are encrypted. Proteins, which are the primary components of food, can be classified as endogenous or exogenous. Both plant and animal proteins are potential sources of a wide range of BP encrypted in their structure.
+        
+        BP share some structural features, including a peptide residue length between 2–20 amino acids and the presence of hydrophobic amino acids in addition to proline, lysine, or arginine groups. They have also shown to be resistant to the action of digestion peptidases, indicating their potential bioavailability in the body.
+        
+        While the correlation between structure and functional properties is not well established, the identification and characterization of BP in food sources have gained significant attention due to their potential health benefits. Therefore, the exploration of BP as a source of functional ingredients has the potential to lead to the development of new functional foods and nutraceuticals with various health benefits.
+        
+        
+        
+        
+        
+        </p>
+
+<h2> Structure of Bioactive peptides </h2>
+<p><img src="data:image/png;base64,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" jsaction="load:XAeZkd;" jsname="HiaYvf" class="n3VNCb" alt="Bioactive peptides: A review" data-noaft="1" style="width: 281px; height: 179px; margin: 207.2px 0px;"></p>
+<h2> Applications </h2>
+<p>
+    <ul>
+        <li> <strong> Nutraceutical</strong></li>
+       <p>The use of nutraceuticals, which are naturally derived substances extracted from sources such as fruits, plants, lignocellulosic biomass, and algae, has gained significant attention in recent years due to their potential health benefits when incorporated into food or pharmaceutical formulations. Functional foods and nutraceuticals have been studied extensively for their role in disease prevention and human health improvement . The isolation and purification of functional peptides present in complex matrices containing numerous hydrolyzed protein fractions are essential. Traditional pressure-driven separation methods suffer from fouling issues and have low selectivity when separating similarly sized biomolecules <a href="https://www.sciencedirect.com/science/article/abs/pii/S030881461630108X"class="button"> (Bazinet and Firdaous, 2009)</a>. To obtain better-purified products, separation processes that use an electrical field as a driving force and porous membranes have been developed for biopeptide separation. More recently, electrodialysis with ultrafiltration membranes has been developed to fractionate acidic and basic peptides simultaneously using a conventional electrodialysis cell with ultrafiltration membranes replacing some of the ion exchange membranes <a href="https://www.sciencedirect.com/science/article/abs/pii/S0260877416300863"class="button"> (Bazinet and Firdaous, 2013)</a>. After separation and identification of biopeptides in three hypoallergenic infant milk formulas, it was confirmed that 24, 30, and 38 biopeptides were present in each formula. Many of these peptides were reported as ACE inhibitors, while others showed biological activities such as antihypertensive, anti-thrombotic, hypocholesterolemic, immunomodulatory, cytotoxic, antioxidant, antimicrobial, antigenic, or opioid properties .
+
+
+
+
+</p>
+        <li> <strong>Functional ingredients</strong></li>
+      <p>BP are released from milk proteins during the fermentation or ripening of dairy products by microorganisms or through the hydrolysis of the purified proteins by enzymes. BP have several potential health benefits such as antihypertensive, antimicrobial, antioxidant, antitumour, and anti-inflammatory activities. They may be used in the formulation of functional foods, nutraceuticals, and drugs for health improvement. Alpha-lactalbumin is a globular protein found in mammalian milk and is a rich source of BP with several health-promoting properties.</p>
+    </ul>
+</p>
+    <h2>Reference</h2>
+    <p>
+        <ul> 
+            <li>[1]Shahidi and Zhong, 2008<a href="https://academic.oup.com/jaoac/article/91/4/914/5656149"class="button"> Bioactive Peptides </a>Journal of AOAC INTERNATIONAL, Volume 91,  Pages 914–931, https://doi.org/10.1093/jaoac/91.4.914 </li>
+            <li>[2] Ignacio Ricci-Cabello, Manuel Olalla Herrera, Reyes Artacho(2012)<a href="https://academic.oup.com/nutritionreviews/article/70/4/241/1937360"class="button"> Possible role of milk-derived bioactive peptides in the treatment and prevention of metabolic syndrome </a> Nutrition Reviews, Volume 70, Issue 4, 1 April 2012, Pages 241–255, https://doi.org/10.1111/j.1753-4887.2011.00448.x. </li>
+            <li>[3]C Silva-Sánchez , A P Barba de la Rosa, M F León-Galván, B O de Lumen, A de León-Rodríguez, E González de Mejía(2008)<a href="https://pubmed.ncbi.nlm.nih.gov/18211015/"class="button"> Bioactive peptides in amaranth (Amaranthus hypochondriacus) seed </a>J Agric Food Chem.  doi: 10.1021/jf072911z. Epub 2008 Jan 23. PMID: 18211015. </li>
+            <li>[4]Shekhar U. Kadam , Brijesh K. Tiwari , Carlos Álvarez , Colm P. O'Donnell(2015) <a href="https://www.sciencedirect.com/science/article/abs/pii/S092422441500179X"class="button"> Ultrasound applications for the extraction, identification and delivery of food proteins and bioactive peptides </a>https://doi.org/10.1016/j.tifs.2015.07.012. </li>
+            <li>[5] Brij Pal Singh , Shilpa Vij , Subrota Hati (2014) <a href="https://pubmed.ncbi.nlm.nih.gov/24508378/"class="button"> Functional significance of bioactive peptides derived from soybean.</a> Peptides. 2014 Apr;54:171-9. doi: 10.1016/j.peptides.2014.01.022. Epub 2014 Feb 5. PMID: 24508378.</li>
+            <li>[6] Elizabeth Escudero , Fidel Toldrá, Miguel Angel Sentandreu, Hitoshi Nishimura, Keizo Arihara(2012)<a href="https://pubmed.ncbi.nlm.nih.gov/22405912/"class="button">Antihypertensive activity of peptides identified in the in vitro gastrointestinal digest of pork meat</a> Meat Sci.  doi: 10.1016/j.meatsci.2012.02.007. Epub 2012 Feb 16. PMID: 22405912.</li>
+            <li>[7] Janet Carrasco-Castilla, Alan Javier Hernández-Álvarez, Cristian Jiménez-Martínez, Gustavo Fidel Gutiérrez-López & Gloria Dávila-Ortiz (2012)<a href="https://link.springer.com/article/10.1007/s12393-012-9058-8"class="button"> Use of Proteomics and Peptidomics Methods in Food Bioactive Peptide Science and Engineering.</a>Food Eng Rev 4, 224–243 (2012). https://doi.org/10.1007/s12393-012-9058-8. </li>
+            <li>[8]Z. F. Bhat, Sunil Kumar, Hina Fayaz Bhat<a href="https://www.emerald.com/insight/content/doi/10.1108/NFS-10-2014-0088/full/html"class="button"> Bioactive peptides from egg: a review
+                </a> Nutrition & Food Science, Vol. 45 No. 2, pp. 190-212. https://doi.org/10.1108/NFS-10-2014-0088. </li>
+            <li>[9] V. ManikkamCentre of Chronic Disease Prevention,T. Vasiljevic,O. N. Donkor &M. L. Mathai   (2015)           <a href="https://www.tandfonline.com/doi/abs/10.1080/10408398.2012.753866"class="button"> A Review of Potential Marine-derived Hypotensive and Anti-obesity Peptides</a>https://doi.org/10.1080/10408398.2012.753866. </li>
+            <li>[10]Huan Li , Rotimi E Aluko (2010)<a href="https://pubmed.ncbi.nlm.nih.gov/20929253/"class="button">Identification and inhibitory properties of multifunctional peptides from pea protein hydrolysate</a>J Agric Food Chem.  doi: 10.1021/jf102538g. Epub 2010 Oct 7. PMID: 20929253. </li>
+            <li>[11] Hannu Korhonen, Anne Pihlanto(2006)<a href="https://www.sciencedirect.com/science/article/abs/pii/S0958694605002426"class="button">Bioactive peptides: Production and functionality</a> https://doi.org/10.1016/j.idairyj.2005.10.012</li>
+            <li>[12]Fátima Arrutia , Ángela Puente , Francisco A. Riera , Carlos Menéndez , Ulises A. González(2016)  <a href="https://www.sciencedirect.com/science/article/abs/pii/S030881461630108X"class="button">Influence of heat pre-treatment on BSA tryptic hydrolysis and peptide release</a> https://doi.org/10.1016/j.foodchem.2016.01.107</li>
+            <li>[13]Fátima Arrutia, Rocío Rubio, Francisco A. Riera(2016)<a href="https://www.sciencedirect.com/science/article/abs/pii/S0260877416300863"class="button"> Production and membrane fractionation of bioactive peptides from a whey protein concentrate </a>https://doi.org/10.1016/j.jfoodeng.2016.03.010. </li>
+            <li>[14]Anna Laura Capriotti, Giuseppe Caruso, Chiara Cavaliere, Roberto Samperi, Salvatore Ventura, Riccardo Zenezini Chiozzi, Aldo Laganà(2015)<a href="https://www.sciencedirect.com/science/article/abs/pii/S0889157515001738"class="button"> Identification of potential bioactive peptides generated by simulated gastrointestinal digestion of soybean seeds and soy milk proteins.</a> https://doi.org/10.1016/j.jfca.2015.08.007. </li>
+            <li>[15]Amal Bakr Shori, Ahmad S. Baba(2014)<a href="https://www.sciencedirect.com/science/article/pii/S131961031100175X"class="button">Comparative antioxidant activity, proteolysis and in vitro α-amylase and α-glucosidase inhibition of Allium sativum-yogurts made from cow and camel milk</a>https://doi.org/10.1016/j.jscs.2011.09.014 </li>
+            
+            
+            <li>[16]M. Gobbetti,L. Stepaniak,M. De Angelis,A. Corsetti &R. Di Cagno(2010)<a href="https://www.tandfonline.com/doi/abs/10.1080/10408690290825538"class="button">Latent Bioactive Peptides in Milk Proteins: Proteolytic Activation and Significance in Dairy Processing</a> https://doi.org/10.1080/10408690290825538</li>
+            <li>[17]V T Ivanov , A A Karelin, M M Philippova, I V Nazimov, V Z Pletnev(1997) <a href="https://pubmed.ncbi.nlm.nih.gov/9216253/"class="button"> Hemoglobin as a source of endogenous bioactive peptides: the concept of tissue-specific peptide pool</a> Biopolymers.  doi: 10.1002/(SICI)1097-0282(1997)43:2<171::AID-BIP10>3.0.CO;2-O. PMID: 9216253.</li>
+            
+            
+                
+        </ul>
+    </p>
+
+</p>   
+
+
+</body>
+</html>
